@@ -7,7 +7,7 @@ Please note: in this scenario server is connected with ethernet cable to the LAN
 ## Table of contents
 1. [Install Debian 14 "Forky"](https://rc-pl.github.io/home-assistant-installation-on-debian-14/#1-install-debian-14-forky)
 2. [Set up bridge networking on your host OS](https://rc-pl.github.io/home-assistant-installation-on-debian-14/#2-set-up-bridge-networking-on-your-host-os)
-3. Install QEMU/KVM and set it up
+3. [Install QEMU/KVM and set it up](https://rc-pl.github.io/home-assistant-installation-on-debian-14/#3-install-qemukvm-and-set-it-up)
 4. Deploy and run Home Assistant Operating System on QEMU
 
 ## 1. Install Debian 14 "Forky"
@@ -61,12 +61,10 @@ Let's first install **bridge-utils** package
 ```bash
 apt install bridge-utils
 ```
-
 Now check your current IP
 ```bash
 ip a
 ```
-
 <p align="center">
     <img src="./media/2-1.png" alt="Check IP in Debian" width="100%">
 </p>
@@ -79,7 +77,6 @@ Let's edit interfaces configuration file
 ```bash
 nano /etc/network/interfaces
 ```
-
 This is a default view. Your interface name can be different.
 
 <p align="center">
@@ -112,17 +109,14 @@ iface br0 inet static
  bridge_waitport 0
  bridge fd 0
 ```
-
 Let's reboot the server.
 ```bash
 systemctl reboot
 ```
-
 Check current network status.
 ```bash
 ip a
 ```
-
 <p align="center">
     <img src="./media/2-3.png" alt="Network bridge in Debian" width="100%">
 </p>
@@ -133,3 +127,30 @@ Bridge **br0** is up and static IP is assigned.
 Home Assistant Operating System (HAOS) can be deployed in couple different ways.<br>
 It can be installed standalone on the server, but this way we get a very restriced Linux system without possibility of installing and running additional services.<br>
 Therefore in this tutorial HAOS will be run as a virtual server guest in QEMU and our host server (Debian) will provide full functionality of a Linux server for running other services.
+
+Let's install QEMU and additional packages.
+```bash
+apt install --no-install-recommends qemu-system-x86 libvirt-clients libvirt-daemon-system virt-install ovmf
+```
+HAOS virtual image is based on x86 architecture, therefore we are installing only x86 system in order to reduce installation size.
+
+Next step is to setup network in our virtualization system.<br>
+We will use **virsh** for managing guest virtual machines (properly called virtual domains).<br>
+Let's start with following command:
+```bash
+virsh net-list --all
+```
+You should see this
+<p align="center">
+    <img src="./media/3-1.png" alt="QEMU default network" width="100%">
+</p>
+This is a **default** network. We will modify it and use in our HAOS virtual machine.<br>
+It's inactive (not started) yet. Let's make it autostart.
+```bash
+virsh net-autostart default
+```
+By default this network uses NAT. We want to change it to bridge.<br>
+This way it can use IP address from our LAN range and can be freely accessed within the LAN.
+```bash
+virsh net-edit default
+```
