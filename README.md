@@ -187,7 +187,7 @@ Let's start with installing necessary packages.
 ```bash
 apt install wget xz-utils
 ```
-Visit [https://www.home-assistant.io/installation/linux/](https://www.home-assistant.io/installation/linux/){:target="_blank" rel="noopener"} and copy URL to the KVM (.qcow2) image. Link should be on the very top of the page.<br>
+Visit [https://www.home-assistant.io/installation/linux/](https://www.home-assistant.io/installation/linux/){:target="_blank" rel="noopener"} and copy URL to the KVM (.qcow2) image.<br>
 Download it with **wget** to the **/var/lib/libvirt/images/** directory.
 ```bash
 wget -P /var/lib/libvirt/images/ https://github.com/home-assistant/operating-system/releases/download/17.3/haos_ova-17.3.qcow2.xz
