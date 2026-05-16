@@ -6,7 +6,7 @@ Please note: in this scenario server is connected with ethernet cable to the LAN
 
 ## Table of contents
 1. [Install Debian 14 "Forky"](https://rc-pl.github.io/home-assistant-installation-on-debian-14/#1-install-debian-14-forky)
-2. Set up bridge networking on your host OS
+2. [Set up bridge networking on your host OS](https://rc-pl.github.io/home-assistant-installation-on-debian-14/#2-set-up-bridge-networking-on-your-host-os)
 3. Install QEMU/KVM and set it up
 4. Deploy and run Home Assistant Operating System on QEMU
 
