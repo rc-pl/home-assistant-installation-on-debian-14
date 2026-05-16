@@ -214,3 +214,13 @@ ha network info
 <p align="center">
     <img src="./media/4-2.png" alt="Home Assistant default network information" width="100%">
 </p>
+We can see that HAOS default network interface is named **enp0s2**.<br>
+It got a DHCP IP from our LAN router (method: auto).<br>
+We want to change it to a static IP (different than the Debian host server).<br>
+In my example I'll make it **192.168.88.101**.
+```bash
+ha network update enp0s2 --ipv4-method static --ipv4-address 192.168.88.101/24 --ipv4-gateway 192.168.88.1
+```
+<p align="center">
+    <img src="./media/4-3.png" alt="Change Home Assistant network to static IP" width="100%">
+</p>
