@@ -246,3 +246,21 @@ Read and note all important information from the screen.
 <p align="center">
     <img src="./media/4-5.png" alt="Home Assistant information" width="100%">
 </p>
+HAOS guest OS can be shut down. We will come back to Debian host OS.
+```bash
+shutdown -h now
+```
+We now have Home Assistant virtual machine (virtual domain in QEMU terminology) installed.<br>
+In Debian host os let's set it up to automatically start on server startup.
+```bash
+virsh autostart haos
+```
+Let's reboot our server and chek if everything works as expected.
+```bash
+shutdown -r now
+```
+Wait until Debian server boots up and try to access Home Assistant with it's URL:<br>
+[http://ha:8123](http://ha:8123)<br>
+or<br>
+[http://homeassistant:8123](http://homeassistant:8123)<br>
+if you decided not to change HAOS hostname.
