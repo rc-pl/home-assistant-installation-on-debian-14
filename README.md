@@ -5,7 +5,7 @@ In this tutorial I will use an old Intel x86 PC as a Home Assistant server.<br>
 Please note: in this scenario server is connected with ethernet cable to the LAN router. Wifi has not been tested.
 
 ## Table of contents
-1. [Install Debian 14 "Forky"](https://rc-pl.github.io/home-assistant-installation-on-debian-14/#install-debian-14-forky)
+1. [Install Debian 14 "Forky"](https://rc-pl.github.io/home-assistant-installation-on-debian-14/#1-install-debian-14-forky)
 2. Set up bridge networking on your host OS
 3. Install QEMU/KVM and set it up
 4. Deploy and run Home Assistant Operating System on QEMU
