@@ -163,8 +163,15 @@ Let's change it to:
 ```bash
 <network>
   <name>default</name>
-  <uuid>YOUR-UUID-HERE</uuid>
+  <uuid>PUT-YOUR-UUID-HERE</uuid>
   <forward mode='bridge'/>
   <bridge name='br0'/>
 </network>
 ```
+Now let's manually start the default network.
+```bash
+virsh net-start default
+```
+<p align="center">
+    <img src="./media/3-3.png" alt="Start default network in QEMU" width="100%">
+</p>
