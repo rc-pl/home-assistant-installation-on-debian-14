@@ -57,7 +57,7 @@ By default Debian configures your network card as a DHCP client, so you get a dy
 We want to have a static IP on the server, so it can always be connected with the same IP.
 
 First check your current IP
-```
+```bash
 ip a
 ```
 
