@@ -187,7 +187,7 @@ Let's start with installing necessary packages.
 ```bash
 apt install wget xz-utils
 ```
-Visit [https://www.home-assistant.io/installation/linux/](https://www.home-assistant.io/installation/linux/){:target="_blank" rel="noopener"} and copy URL to the KVM (.qcow2) image format. Link should be on the very top of the page.<br>
+Visit [https://www.home-assistant.io/installation/linux/](https://www.home-assistant.io/installation/linux/){:target="_blank" rel="noopener"} and copy URL to the KVM (.qcow2) image. Link should be on the very top of the page.<br>
 Download it with **wget** to the **/var/lib/libvirt/images/** directory.
 ```bash
 wget -P /var/lib/libvirt/images/ https://github.com/home-assistant/operating-system/releases/download/17.3/haos_ova-17.3.qcow2.xz
@@ -200,3 +200,9 @@ Import HAOS image with **virt-install**. You might want to change RAM and virtua
 ```bash
 virt-install --name haos --description "Home Assistant OS" --os-variant=generic --ram=4096 --vcpus=2 --disk /var/lib/libvirt/images/haos_ova-17.3.qcow2,bus=scsi --controller type=scsi,model=virtio-scsi --import --graphics none --boot uefi
 ```
+HAOS virtual machine will start from the image.<br>
+Wait until it boots (it might take a while)<br>
+Log in with user **root** and no password.
+<p align="center">
+    <img src="./media/4-1.png" alt="Home Assistant OS root login" width="100%">
+</p>
