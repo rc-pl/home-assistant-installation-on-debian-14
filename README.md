@@ -62,5 +62,5 @@ ip a
 ```
 
 <p align="center">
-    <img src="./media/2-1.png" alt="Check IP in Debian" width="50%">
+    <img src="./media/2-1.png" alt="Check IP in Debian" width="100%">
 </p>
