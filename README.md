@@ -117,3 +117,12 @@ Let's reboot the server.
 ```bash
 systemctl reboot
 ```
+
+and check current network status
+```bash
+ip a
+```
+
+<p align="center">
+    <img src="./media/2-3.png" alt="Network bridge in Debian" width="100%">
+</p>
