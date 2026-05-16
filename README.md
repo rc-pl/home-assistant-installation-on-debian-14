@@ -57,7 +57,12 @@ Now your Debian 14 server is up and running and can be used in both ways:<br>
 By default Debian configures your network card as a DHCP client, so you get a dynamic IP from your LAN router.<br>
 We want to have a static IP on the server, so it can always be connected with the same IP.
 
-First check your current IP
+Let's first install **bridge-utils** package
+```bash
+apt install bridge-utils
+```
+
+Now check your current IP
 ```bash
 ip a
 ```
@@ -68,5 +73,41 @@ ip a
 
 In this example we see two network interfaces: **lo** virtual loopback interface and **enp1s0** physical network card connected to LAN router with ethernet cable.<br>
 Physical network interface received 192.168.88.16 IP via DHCP.<br>
-Now it's time to plan what static IP we are going to use. It should be outside DHCP IP range. If you don't know it, safe bet would be to use a high number.<br>
-In this example I will use 192.168.88.100.
+Now it's time to plan what static IP we are going to use. It should be outside DHCP IP range. If you don't know it, safe bet would be to use a high number. In this example I will use **192.168.88.100**.
+
+Let's edit interfaces configuration file
+```bash
+nano /etc/network/interfaces
+```
+
+This is a default view. Your interface name can be different.
+
+<p align="center">
+    <img src="./media/2-2.png" alt="Check IP in Debian" width="100%">
+</p>
+
+Let's define a **br0** bridge and assign a physical interface **enp1s0** to it.
+```bash
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto br0
+iface br0 inet static
+ address 192.168.88.100
+ broadcast 192.168.88.255
+ netmask 255.255.255.0
+ gateway 192.168.88.1
+ bridge_ports enp1s0
+ bridge_stp off
+ bridge_waitport 0
+ bridge fd 0
+```
+
+
