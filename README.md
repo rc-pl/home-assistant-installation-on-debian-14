@@ -224,3 +224,15 @@ ha network update enp0s2 --ipv4-method static --ipv4-address 192.168.88.101/24 -
 <p align="center">
     <img src="./media/4-3.png" alt="Change Home Assistant network to static IP" width="100%">
 </p>
+Optional step: change Home Assistant hostname.<br>
+By default Home Assistant can be reached with **homeassistant* hostname.<br>
+I want to make it shorter. For instance just: **ha**.
+```bash
+hostnamectl hostname ha
+```
+```bash
+vi /etc/hosts
+```
+<p align="center">
+    <img src="./media/4-4.png" alt="Change /etc/hosts in Home Assistant" width="100%">
+</p>
