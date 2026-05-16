@@ -42,7 +42,24 @@ Save all changes and restart the server. It should now boot from the USB disk an
 Installation is pretty straightfoward. Just follow below video. **STOP** before GNOME installation (we don't need that).
 <p align="center">
   <a href="https://www.youtube.com/watch?v=w2HFAhIIyag" target="_blank">
-    <img src="./media/1-2.png" alt="Rufus settings to write Debian ISO on USB disk" width="50%">
+    <img src="./media/1-2.png" alt="Debian installation video" width="50%">
   </a>
 </p>
 
+After installation is finished remove USB disk and reboot the machine.
+
+Now you have a Debian 14 server which can be used in both ways:<br>
+- host OS on which you will run virtual server with Home Assistant Operating System<br>
+- general purpose Linux server where you can run any additional services (pihole, file server, whatever)
+
+## 2. Set up bridge networking on your host OS
+By default Debian configures your network card as a DHCP client, so you get a dynamic IP from your LAN router.<br>
+We want to have a static IP on the server, so it can always be connected with the same IP.
+
+First check your current IP
+```bash
+ip a
+
+<p align="center">
+    <img src="./media/1-3.png" alt="Check IP in Debian" width="50%">
+</p>
