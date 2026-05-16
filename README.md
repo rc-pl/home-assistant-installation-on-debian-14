@@ -1,6 +1,8 @@
 # How to install Home Assistant on Debian 14 "Forky" with QEMU/KVM virtual image
 
-It's been a tough learning path for me, so I decided to create this tutorial and spare you this effort.
+It's been a tough learning path for me, so I decided to create this tutorial and spare you all that effort.<br>
+In this tutorial I will use an old Intel x86 PC as a Home Assistant server.<br>
+Please note: in this scenario server is connected with ethernet cable to the LAN router. Wifi has not been tested.
 
 ## Table of contents
 1. [Install Debian 14 "Forky"](https://rc-pl.github.io/home-assistant-installation-on-debian-14/#install-debian-14-forky)
@@ -24,3 +26,16 @@ Plug USB disk into your PC and start Rufus. Make sure USB disk is shown in Devic
   <img src="./media/1-1.png" alt="Rufus settings to write Debian ISO on USB disk" width="70%">
 </p>
 Rufus may ask you some questions before writing the image. Just click "OK" / "Confirm" to start the process.
+
+### Install Debian on the server machine
+
+Connect your server with RJ45 cable to the router.
+
+Put Debian installer USB disk in USB port.
+
+Turn on the server and enter the BIOS by pressing relevant key on the keyboard. It might be something like DEL, F1, F12 - depends on the manufacturer.
+
+In BIOS make sure that USB disk is selected as a first boot device. Make sure that virtualization is possible and is enabled for your processor.
+
+Save all changes and restart the server. It should now boot from the USB disk and you will see a welcome screen for Debian installer.
+
