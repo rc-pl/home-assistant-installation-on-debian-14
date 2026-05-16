@@ -144,7 +144,7 @@ You should see this
 <p align="center">
     <img src="./media/3-1.png" alt="QEMU default network" width="100%">
 </p>
-This is a **default** network. We will modify it and use in our HAOS virtual machine.<br>
+This is a **default** network. We will modify it. It will be later used by our HAOS virtual machine.<br>
 It's inactive (not started) yet. Let's make it autostart.
 ```bash
 virsh net-autostart default
