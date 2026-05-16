@@ -113,4 +113,7 @@ iface br0 inet static
  bridge fd 0
 ```
 
-
+Let's reboot the server.
+```bash
+systemctl reboot
+```
