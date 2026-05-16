@@ -237,3 +237,12 @@ vi /etc/hosts
 <p align="center">
     <img src="./media/4-4.png" alt="Change /etc/hosts in Home Assistant" width="100%">
 </p>
+As for now Home Assistant Operating System configuration is finished.<br>
+Execute following command:
+```bash
+ha banner
+```
+Read and note all important information from the screen.
+<p align="center">
+    <img src="./media/4-5.png" alt="Home Assistant information" width="100%">
+</p>
