@@ -154,3 +154,17 @@ This way it can use IP address from our LAN range and can be freely accessed wit
 ```bash
 virsh net-edit default
 ```
+This is a default definition for **default** network.<br>
+UUID is randomly generated. It will be different on your machine.
+<p align="center">
+    <img src="./media/3-2.png" alt="QEMU default network definition" width="100%">
+</p>
+Let's change it to:
+```bash
+<network>
+  <name>default</name>
+  <uuid>YOUR-UUID-HERE</uuid>
+  <forward mode='bridge'/>
+  <bridge name='br0'/>
+</network>
+```
