@@ -48,7 +48,7 @@ Installation is pretty straightfoward. Just follow below video. **STOP** before 
 
 After installation is finished remove USB disk and reboot the machine.
 
-Now you have a Debian 14 server which can be used in both ways:<br>
+Now your Debian 14 server is up and running and can be used in both ways:<br>
 - host OS on which you will run virtual server with Home Assistant Operating System<br>
 - general purpose Linux server where you can run any additional services (pihole, file server, whatever)
 
@@ -66,5 +66,7 @@ ip a
     <img src="./media/2-1.png" alt="Check IP in Debian" width="100%">
 </p>
 
-In this example we see two interfaces: **lo** virtual loopback interface and **enp1s0** phisical network card connected to LAN router with ethernet cable.<br>
-
+In this example we see two network interfaces: **lo** virtual loopback interface and **enp1s0** physical network card connected to LAN router with ethernet cable.<br>
+Physical network interface received 192.168.88.16 IP via DHCP.<br>
+Now it's time to plan what static IP we are going to use. It should be outside DHCP IP range. If you don't know it, safe bet would be to use a high number.<br>
+In this example I will use 192.168.88.100.
