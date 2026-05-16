@@ -200,9 +200,17 @@ Import HAOS image with **virt-install**. You might want to change RAM and virtua
 ```bash
 virt-install --name haos --description "Home Assistant OS" --os-variant=generic --ram=4096 --vcpus=2 --disk /var/lib/libvirt/images/haos_ova-17.3.qcow2,bus=scsi --controller type=scsi,model=virtio-scsi --import --graphics none --boot uefi
 ```
-HAOS virtual machine will start from the image.<br>
-Wait until it boots (it might take a while)<br>
+HAOS virtual machine will be started.<br>
+Wait until it boots (it might take a while).<br>
 Log in with user **root** and no password.
 <p align="center">
     <img src="./media/4-1.png" alt="Home Assistant OS root login" width="100%">
+</p>
+Next step is to configure network in HAOS system.<br>
+Let's first display current network information.
+```bash
+ha network info
+```
+<p align="center">
+    <img src="./media/4-2.png" alt="Home Assistant default network information" width="100%">
 </p>
