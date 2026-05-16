@@ -86,7 +86,7 @@ This is a default view. Your interface name can be different.
     <img src="./media/2-2.png" alt="Default interfaces in Debian" width="100%">
 </p>
 
-Let's define a **br0** bridge and assign a physical interface **enp1s0** to it.
+Let's define a **br0** bridge and bind a physical interface **enp1s0** as a bridge port.
 ```bash
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
