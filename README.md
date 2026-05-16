@@ -39,6 +39,7 @@ In BIOS make sure that USB disk is selected as a first boot device. Make sure th
 
 Save all changes and restart the server. It should now boot from the USB disk and you will see a welcome screen for Debian installer.
 
-Installation is pretty straightfoward. Just follow below video. Stop before GNOME installation (we don't need that).
-[![Watch the video](https://img.youtube.com/vi/w2HFAhIIyag/0.jpg)](https://www.youtube.com/watch?v=w2HFAhIIyag)
+Installation is pretty straightfoward. Just follow below video. **STOP** before GNOME installation (we don't need that).
+
+[![Watch the video](https://img.youtube.com/vi/w2HFAhIIyag/0.jpg)](https://www.youtube.com/watch?v=w2HFAhIIyag){:target="_blank" rel="noopener"}
 
