@@ -21,6 +21,6 @@ Go to [https://rufus.ie/](https://rufus.ie) and download Portable version of thi
 
 Plug USB disk into your PC and start Rufus. Make sure USB disk is shown in Device section. Select Debian ISO and click Start to write it on the USB disk.
 <p align="center">
-  <img src="./media/1-1.png" alt="Rufus settings to write Debian ISO on USB disk">
+  <img src="./media/1-1.png" alt="Rufus settings to write Debian ISO on USB disk" width="70%">
 </p>
 Rufus may ask you some questions before writing the image. Just click "OK" or "Confirm" to start the process.
