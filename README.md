@@ -54,7 +54,7 @@ Now your Debian 14 server is up and running and can be used in both ways:<br>
 
 
 ## 2. Set up bridge networking on your host OS
-By default Debian configures your network card as a DHCP client, so you get a dynamic IP from your LAN router.<br>
+By default Debian configures your network interface as a DHCP client, so you get a dynamic IP from your LAN router.<br>
 We want to have a static IP on the server, so it can always be connected with the same IP.
 
 Let's first install **bridge-utils** package
@@ -118,7 +118,7 @@ Let's reboot the server.
 systemctl reboot
 ```
 
-and check current network status
+Check current network status.
 ```bash
 ip a
 ```
@@ -126,3 +126,10 @@ ip a
 <p align="center">
     <img src="./media/2-3.png" alt="Network bridge in Debian" width="100%">
 </p>
+
+Bridge **br0** is up and static IP is assigned.
+
+## 3. Install QEMU/KVM and set it up
+Home Assistant Operating System (HAOS) can be deployed in couple different ways.<br>
+It can be installed standalone on the server, but this way we get a very restriced Linux system without possibility of installing and running additional services.<br>
+Therefore in this tutorial HAOS will be run as a virtual server guest in QEMU and our host server (Debian) will provide full functionality of a Linux server for running other services.
