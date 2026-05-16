@@ -29,7 +29,7 @@ Rufus may ask you some questions before writing the image. Just click "OK" / "Co
 
 ### Install Debian on the server machine
 
-Connect your server with RJ45 cable to the router.
+Connect your server with RJ45 cable to the LAN router.
 
 Put Debian installer USB disk in USB port.
 
@@ -38,4 +38,7 @@ Turn on the server and enter the BIOS by pressing relevant key on the keyboard. 
 In BIOS make sure that USB disk is selected as a first boot device. Make sure that virtualization is possible and is enabled for your processor.
 
 Save all changes and restart the server. It should now boot from the USB disk and you will see a welcome screen for Debian installer.
+
+Installation is pretty straightfoward. Just follow below video. Stop before GNOME installation (we don't need that).
+[(https://img.youtube.com/vi/w2HFAhIIyag/0.jpg)](https://www.youtube.com/watch?v=w2HFAhIIyag)
 
