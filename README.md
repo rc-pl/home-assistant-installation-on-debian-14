@@ -40,6 +40,9 @@ In BIOS make sure that USB disk is selected as a first boot device. Make sure th
 Save all changes and restart the server. It should now boot from the USB disk and you will see a welcome screen for Debian installer.
 
 Installation is pretty straightfoward. Just follow below video. **STOP** before GNOME installation (we don't need that).
-
-[![Watch the video](./media/1-2.png)](https://www.youtube.com/watch?v=w2HFAhIIyag){:target="_blank" rel="noopener"}
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=w2HFAhIIyag" target="_blank">
+    <img src="./media/1-1.png" alt="Rufus settings to write Debian ISO on USB disk" width="50%">
+  </a>
+</p>
 
