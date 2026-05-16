@@ -264,3 +264,8 @@ Wait until Debian server boots up and try to access Home Assistant with it's URL
 or<br>
 [http://homeassistant:8123](http://homeassistant:8123){:target="_blank" rel="noopener"}<br>
 if you decided not to change HAOS hostname.
+
+You should see Home Assistant onboarding screen.
+<p align="center">
+    <img src="./media/4-6.png" alt="Home Assistant onboarding" width="100%">
+</p>
