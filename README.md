@@ -97,6 +97,9 @@ source /etc/network/interfaces.d/*
 auto lo
 iface lo inet loopback
 
+# Set up interfaces manually, avoiding conflicts with, e.g., network manager
+iface enp1s0 inet manual
+
 # The primary network interface
 auto br0
 iface br0 inet static
