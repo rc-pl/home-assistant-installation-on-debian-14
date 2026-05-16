@@ -9,11 +9,18 @@ It's been a tough learning path for me, so I decided to create this tutorial and
 4. Deploy and run Home Assistant Operating System on QEMU
 
 ### Install Debian 14 "Forky"
-1. Download Debian 14 NETINST image and write it on USB disk with Rufus
+1. Download Debian 14 NETINST image and save it on your PC
 
-We're going to install Debian minimal server, therefore NETINST installer is sufficient for this task, as it provides only necessary set of packages.<Br>
-As of may 2026 Debian 14 "Forky" is still in testing phase, so use this URL
-[https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/](https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/)
-to download the [debian-testing-amd64-netinst.iso](https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/debian-testing-amd64-netinst.iso) ISO
+We're going to install Debian minimal server, therefore NETINST installer is sufficient for this task. As of may 2026 Debian 14 "Forky" is still in testing phase, so use this URL [https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/](https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/) to download the [debian-testing-amd64-netinst.iso](https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/debian-testing-amd64-netinst.iso) ISO.
 
-3. 
+As soon as Debian 14 "Forky" becomes stable (expected to happen in 2027), use this URL to download NETINST installer ISO [https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/).
+
+2. Write Debian ISO to USB disk with Rufus
+
+Go to [https://rufus.ie/](https://rufus.ie) and download Portable version of this program.
+
+Plug USB disk into your PC and start Rufus. Make sure USB disk is shown in Device section. Select Debian ISO and click Start to write it on the USB disk.
+<p align="center">
+  <img src="./media/1-1.png" alt="Rufus settings to write Debian ISO on USB disk">
+</p>
+Rufus may ask you some questions before writing the image. Just click "OK" or "Confirm" to start the process.
