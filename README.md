@@ -52,6 +52,7 @@ Now you have a Debian 14 server which can be used in both ways:<br>
 - host OS on which you will run virtual server with Home Assistant Operating System<br>
 - general purpose Linux server where you can run any additional services (pihole, file server, whatever)
 
+
 ## 2. Set up bridge networking on your host OS
 By default Debian configures your network card as a DHCP client, so you get a dynamic IP from your LAN router.<br>
 We want to have a static IP on the server, so it can always be connected with the same IP.
@@ -64,3 +65,6 @@ ip a
 <p align="center">
     <img src="./media/2-1.png" alt="Check IP in Debian" width="100%">
 </p>
+
+In this example we see two interfaces: **lo** virtual loopback interface and **enp1s0** phisical network card connected to LAN router with ethernet cable.<br>
+
