@@ -227,7 +227,7 @@ ha network update enp0s2 --ipv4-method static --ipv4-address 192.168.88.101/24 -
 **Optional step:**<br>
 Change Home Assistant hostname.<br>
 By default Home Assistant can be reached with **homeassistant** hostname.<br>
-I want to make it shorter. For instance just: **ha**.
+I want to make it shorter. For instance just **ha**.
 ```bash
 hostnamectl hostname ha
 ```
