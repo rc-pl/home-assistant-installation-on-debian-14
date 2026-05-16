@@ -172,6 +172,31 @@ Now let's manually start the default network.
 ```bash
 virsh net-start default
 ```
+```bash
+virsh net-list --all
+```
 <p align="center">
     <img src="./media/3-3.png" alt="Start default network in QEMU" width="100%">
 </p>
+We now have a **default** network set up as a bridge. It will use our host OS bridge.<br>
+
+## 4. Deploy and run Home Assistant Operating System on QEMU
+In this step we need to download HAOS virtual image to our server.
+
+Let's start with installing necessary packages.
+```bash
+apt install wget xz-utils
+```
+Visit [https://www.home-assistant.io/installation/linux/](https://www.home-assistant.io/installation/linux/){:target="_blank" rel="noopener"} and copy URL to the KVM (.qcow2) image format. Link should be on the very top of the page.<br>
+Download it with **wget** to the **/var/lib/libvirt/images/** directory.
+```bash
+wget -P /var/lib/libvirt/images/ https://github.com/home-assistant/operating-system/releases/download/17.3/haos_ova-17.3.qcow2.xz
+```
+Decompress downloaded file.
+```bash
+unxz /var/lib/libvirt/images/haos_ova-17.3.qcow2.xz
+```
+Import HAOS image with **virt-install**. You might want to change RAM and virtual CPU count as per your need.
+```bash
+virt-install --name haos --description "Home Assistant OS" --os-variant=generic --ram=4096 --vcpus=2 --disk /var/lib/libvirt/images/haos_ova-17.3.qcow2,bus=scsi --controller type=scsi,model=virtio-scsi --import --graphics none --boot uefi
+```
