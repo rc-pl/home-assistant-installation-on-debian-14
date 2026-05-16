@@ -83,7 +83,7 @@ nano /etc/network/interfaces
 This is a default view. Your interface name can be different.
 
 <p align="center">
-    <img src="./media/2-2.png" alt="Check IP in Debian" width="100%">
+    <img src="./media/2-2.png" alt="Default interfaces in Debian" width="100%">
 </p>
 
 Let's define a **br0** bridge and assign a physical interface **enp1s0** to it.
